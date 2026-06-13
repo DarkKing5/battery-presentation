@@ -24,9 +24,12 @@
 
   <!-- ═══ HERO ═══ -->
   <section class="section hero" id="hero">
-    <div class="hero-label reveal stagger-1">Tiger Robotics Research</div>
+    <div class="hero-label reveal stagger-1">Tiger Robotics Research · Июнь 2026</div>
     <h1 class="t-display reveal stagger-2">POWER <span class="t-accent">CELLS</span></h1>
-    <p class="t-sub hero-subtitle reveal stagger-3">Выбор батареи для автономного робота</p>
+    <p class="t-sub hero-subtitle reveal stagger-3">
+      Какую батарею поставить в автономного робота,<br>
+      чтобы он пережил зиму и лето Алматы?
+    </p>
 
     <div class="hero-image reveal stagger-4">
       <img src="img/battery-hero.png" alt="LiFePO4 battery pack" width="960" height="640">
@@ -47,7 +50,7 @@
       </div>
       <div>
         <div class="hero-spec-val">−25 / +42°C</div>
-        <div class="hero-spec-lbl">Алматы</div>
+        <div class="hero-spec-lbl">Алматы, Казахстан</div>
       </div>
     </div>
 
@@ -55,24 +58,54 @@
   </section>
 
 
-  <!-- ═══ 5 ТИПОВ ═══ -->
-  <section class="section types-section" id="types">
+  <!-- ═══ ЗИМА АЛМАТЫ ═══ -->
+  <section class="section" id="challenge">
+    <div class="section-inner">
+      <div class="split-block">
+        <div class="split-text">
+          <span class="t-label reveal">Вызов</span>
+          <h2 class="t-heading reveal stagger-2">Зима −25°C.<br>Лето +42°C.</h2>
+          <p class="t-body reveal stagger-3">
+            Робот Tiger работает на улице круглый год. Большинство батарей не выдерживают такой разброс температур. Литий-ион замерзает зимой и перегревается летом. Нам нужна батарея, которая работает везде.
+          </p>
+          <div class="split-stats reveal stagger-4">
+            <div class="split-stat">
+              <div class="split-stat-val" data-counter data-target="67">0</div>
+              <div class="split-stat-lbl">°C разница зима/лето</div>
+            </div>
+            <div class="split-stat">
+              <div class="split-stat-val">365</div>
+              <div class="split-stat-lbl">дней/год на улице</div>
+            </div>
+          </div>
+        </div>
+        <div class="split-image reveal stagger-3">
+          <img src="img/almaty-winter.png" alt="Алматы зимой, −25°C">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ 5 ТИПОВ — ОБЗОР ═══ -->
+  <section class="section" id="types">
     <div class="section-inner">
       <div class="section-head reveal">
         <span class="t-label">Обзор</span>
-        <h2 class="t-heading">5 типов батарей</h2>
+        <h2 class="t-heading">Мы сравнили 5 технологий</h2>
+        <p class="t-sub" style="margin-top: var(--s-sm); max-width: 50ch;">Каждая батарея — это компромисс. Нет идеальной. Но есть лучшая для нашего робота.</p>
       </div>
 
       <div class="types-image reveal stagger-2">
-        <img src="img/battery-types.png" alt="Battery cell types comparison" width="1600" height="600">
+        <img src="img/battery-types.png" alt="5 типов батарей" width="1600" height="600">
       </div>
 
       <div class="types-grid reveal stagger-3">
         <div class="type-cell">
           <div class="type-name">LiFePO4</div>
           <div class="type-chem">Литий-железо-фосфат</div>
-          <div class="type-num">6,000</div>
-          <div class="type-unit">циклов</div>
+          <div class="type-num" data-counter data-target="6000" data-suffix="+">0</div>
+          <div class="type-unit">циклов жизни</div>
           <span class="type-tag tag-rec">✓ Наш выбор</span>
         </div>
         <div class="type-cell">
@@ -85,23 +118,174 @@
         <div class="type-cell">
           <div class="type-name">LTO</div>
           <div class="type-chem">Литий-титанат</div>
-          <div class="type-num">25,000</div>
-          <div class="type-unit">циклов</div>
+          <div class="type-num" data-counter data-target="25000" data-suffix="+">0</div>
+          <div class="type-unit">циклов жизни</div>
           <span class="type-tag tag-prem">Премиум</span>
         </div>
         <div class="type-cell">
           <div class="type-name">Solid-State</div>
           <div class="type-chem">Твердотельные</div>
-          <div class="type-num">420</div>
-          <div class="type-unit">Wh/kg (прототип)</div>
-          <span class="type-tag tag-lab">2028+</span>
+          <div class="type-num">2028+</div>
+          <div class="type-unit">ещё не продаётся</div>
+          <span class="type-tag tag-lab">Будущее</span>
         </div>
         <div class="type-cell">
           <div class="type-name">Li-ion</div>
           <div class="type-chem">18650 / 21700</div>
-          <div class="type-num">700</div>
-          <div class="type-unit">циклов</div>
+          <div class="type-num">⚠</div>
+          <div class="type-unit">опасно для робота</div>
           <span class="type-tag tag-no">Не подходит</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ DEEP DIVE: LiFePO4 ═══ -->
+  <section class="section" id="lifepo4">
+    <div class="section-inner">
+      <div class="split-block reverse">
+        <div class="split-text">
+          <span class="t-label reveal">🥇 Рекомендация</span>
+          <h2 class="t-heading reveal stagger-2">LiFePO4</h2>
+          <p class="t-body reveal stagger-3">
+            Золотой стандарт для робототехники. Оливиновая структура катода не выделяет кислород при перегреве — thermal runaway практически невозможен. Порог возгорания 270°C (у Li-ion — 150°C).
+          </p>
+          <div class="feature-list reveal stagger-4">
+            <div class="feature-item">
+              <span class="feature-val">6,000</span>
+              <span class="feature-lbl">циклов при 80% DOD</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-val">9/10</span>
+              <span class="feature-lbl">безопасность</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-val">$150-250</span>
+              <span class="feature-lbl">за 24V 30Ah пак</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-val">10+ лет</span>
+              <span class="feature-lbl">ресурс</span>
+            </div>
+          </div>
+          <div class="callout reveal stagger-5">
+            ⚠ Нельзя заряжать ниже 0°C — нужен self-heating BMS (+$30-50)
+          </div>
+        </div>
+        <div class="split-image reveal stagger-3">
+          <img src="img/lifepo4.png" alt="LiFePO4 24V 30Ah battery pack">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ DEEP DIVE: Na-ion ═══ -->
+  <section class="section" id="naion">
+    <div class="section-inner">
+      <div class="split-block">
+        <div class="split-text">
+          <span class="t-label reveal">🥈 Будущее</span>
+          <h2 class="t-heading reveal stagger-2">Na-ion</h2>
+          <p class="t-body reveal stagger-3">
+            Козырь — мороз. CATL Naxtra сохраняет 90% ёмкости при −40°C. Заряжается при −20°C. Для Алматы это значит: никакого нагревателя зимой. Но готовых 24V паков нет — только DIY из 32140 ячеек.
+          </p>
+          <div class="feature-list reveal stagger-4">
+            <div class="feature-item">
+              <span class="feature-val">−40°C</span>
+              <span class="feature-lbl">рабочая температура</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-val">15 мин</span>
+              <span class="feature-lbl">заряд до 80% (4C)</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-val">$175-290</span>
+              <span class="feature-lbl">DIY пак (8S2P)</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-val">0% лития</span>
+              <span class="feature-lbl">экологичность</span>
+            </div>
+          </div>
+          <div class="callout callout-blue reveal stagger-5">
+            Заказать 16 ячеек 32140 (~$125) для зимнего тестирования
+          </div>
+        </div>
+        <div class="split-image reveal stagger-3">
+          <img src="img/naion.png" alt="Na-ion 32140 cylindrical cells">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ DEEP DIVE: LTO ═══ -->
+  <section class="section" id="lto">
+    <div class="section-inner">
+      <div class="split-block reverse">
+        <div class="split-text">
+          <span class="t-label reveal">🥉 Неубиваемый</span>
+          <h2 class="t-heading reveal stagger-2">LTO</h2>
+          <p class="t-body reveal stagger-3">
+            Литий-титанатный анод с наноструктурой. 25,000 циклов — батарея переживёт робота 5 раз. Заряд 80% за 6 минут. Безопасность 10/10. Но тяжелее и дороже в 2-3 раза.
+          </p>
+          <div class="feature-list reveal stagger-4">
+            <div class="feature-item">
+              <span class="feature-val">25,000</span>
+              <span class="feature-lbl">циклов жизни</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-val">6 мин</span>
+              <span class="feature-lbl">заряд до 80%</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-val">$300-800</span>
+              <span class="feature-lbl">24V 30Ah пак</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-val">10/10</span>
+              <span class="feature-lbl">безопасность</span>
+            </div>
+          </div>
+        </div>
+        <div class="split-image reveal stagger-3">
+          <img src="img/lto.png" alt="Yinlong LTO 66160 cell">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ SOLID-STATE + СОСИСКИ ═══ -->
+  <section class="section" id="others">
+    <div class="section-inner">
+      <div class="duo-block">
+        <!-- Solid-State -->
+        <div class="duo-card reveal stagger-1">
+          <div class="duo-image">
+            <img src="img/solidstate.png" alt="Solid-state battery concept">
+          </div>
+          <div class="duo-content">
+            <span class="t-label">👀 Будущее</span>
+            <h3 class="duo-title">Solid-State</h3>
+            <p class="duo-desc">350-420 Wh/kg — в 2 раза легче LiFePO4. Но не продаётся. Toyota и Samsung обещают массовое производство к 2027-28. Для робототехники — 2028-30.</p>
+            <div class="duo-meta">Статус: нельзя купить</div>
+          </div>
+        </div>
+
+        <!-- Li-ion Sausages -->
+        <div class="duo-card duo-danger reveal stagger-2">
+          <div class="duo-image">
+            <img src="img/sausages.png" alt="18650 Li-ion cells - danger">
+          </div>
+          <div class="duo-content">
+            <span class="t-label" style="color: var(--red);">❌ «Сосиски не пойдут»</span>
+            <h3 class="duo-title">Li-ion 18650/21700</h3>
+            <p class="duo-desc">Thermal runaway при 150°C. Выделяют кислород — огонь сам себя питает. 42+ ячейки = 42 точки отказа. Вибрация разрушает соединения. При +42°C в Алматы + нагрузка мотора = опасно.</p>
+            <div class="duo-meta" style="color: var(--red);">CEO прав: не для нашего робота</div>
+          </div>
         </div>
       </div>
     </div>
@@ -113,7 +297,8 @@
     <div class="section-inner">
       <div class="section-head reveal">
         <span class="t-label">Внутри батареи</span>
-        <h2 class="t-heading">Анатомия</h2>
+        <h2 class="t-heading">Анатомия LiFePO4</h2>
+        <p class="t-sub" style="margin-top: var(--s-sm);">Каждый слой отвечает за безопасность, ёмкость или ресурс</p>
       </div>
 
       <div class="type-toggle reveal stagger-2">
@@ -130,45 +315,27 @@
         <div class="anatomy-layers">
           <div class="layer-card reveal stagger-1">
             <div class="layer-dot dot-housing"></div>
-            <div>
-              <div class="layer-name">Корпус</div>
-              <div class="layer-desc">AL/сталь, IP65+, крепёж M6</div>
-            </div>
+            <div><div class="layer-name">Корпус</div><div class="layer-desc">AL/сталь, IP65+, крепёж M6</div></div>
           </div>
           <div class="layer-card reveal stagger-2">
             <div class="layer-dot dot-bms"></div>
-            <div>
-              <div class="layer-name">BMS плата</div>
-              <div class="layer-desc">8 защит, CANBus, балансировка</div>
-            </div>
+            <div><div class="layer-name">BMS плата</div><div class="layer-desc">8 защит, CANBus/RS485, балансировка</div></div>
           </div>
           <div class="layer-card reveal stagger-3">
             <div class="layer-dot dot-cathode"></div>
-            <div>
-              <div class="layer-name">Катод — LiFePO₄</div>
-              <div class="layer-desc">3.2V/ячейка, 0% кобальта, без thermal runaway</div>
-            </div>
+            <div><div class="layer-name">Катод — LiFePO₄</div><div class="layer-desc">3.2V/ячейка, 0% кобальта, без T-runaway</div></div>
           </div>
           <div class="layer-card reveal stagger-4">
             <div class="layer-dot dot-electro"></div>
-            <div>
-              <div class="layer-name">Электролит</div>
-              <div class="layer-desc">LiPF₆, безопасный при перегреве</div>
-            </div>
+            <div><div class="layer-name">Электролит</div><div class="layer-desc">LiPF₆, безопасен при перегреве</div></div>
           </div>
           <div class="layer-card reveal stagger-5">
             <div class="layer-dot dot-anode"></div>
-            <div>
-              <div class="layer-name">Анод — графит</div>
-              <div class="layer-desc">372 mAh/g, стабильный, дешёвый</div>
-            </div>
+            <div><div class="layer-name">Анод — графит</div><div class="layer-desc">372 mAh/g, стабильный</div></div>
           </div>
           <div class="layer-card reveal stagger-5">
             <div class="layer-dot dot-bottom"></div>
-            <div>
-              <div class="layer-name">Основание</div>
-              <div class="layer-desc">Крепёж на шасси, пассивное охлаждение</div>
-            </div>
+            <div><div class="layer-name">Основание</div><div class="layer-desc">Крепёж на шасси, пассивное охлаждение</div></div>
           </div>
         </div>
       </div>
@@ -178,45 +345,27 @@
         <div class="anatomy-layers">
           <div class="layer-card reveal stagger-1">
             <div class="layer-dot dot-housing"></div>
-            <div>
-              <div class="layer-name">Корпус</div>
-              <div class="layer-desc">Разряд до 0V для транспортировки</div>
-            </div>
+            <div><div class="layer-name">Корпус</div><div class="layer-desc">Можно разрядить до 0V для транспортировки</div></div>
           </div>
           <div class="layer-card reveal stagger-2">
             <div class="layer-dot dot-bms"></div>
-            <div>
-              <div class="layer-name">BMS</div>
-              <div class="layer-desc">~3.1V/ячейка, другой SOC-алгоритм</div>
-            </div>
+            <div><div class="layer-name">BMS</div><div class="layer-desc">~3.1V/ячейка, специфический SOC-алгоритм</div></div>
           </div>
           <div class="layer-card reveal stagger-3">
             <div class="layer-dot dot-cathode"></div>
-            <div>
-              <div class="layer-name">Катод — Прусский синий</div>
-              <div class="layer-desc">0% лития, 0% кобальта, −30-40% стоимость</div>
-            </div>
+            <div><div class="layer-name">Катод — Прусский синий</div><div class="layer-desc">0% лития, 0% кобальта, −30-40% себестоимость</div></div>
           </div>
           <div class="layer-card reveal stagger-4">
             <div class="layer-dot dot-electro"></div>
-            <div>
-              <div class="layer-name">Электролит — козырь!</div>
-              <div class="layer-desc">NaPF₆, работает при −40°C, 90% ёмкости</div>
-            </div>
+            <div><div class="layer-name">Электролит — козырь!</div><div class="layer-desc">NaPF₆, работает при −40°C, 90% ёмкости</div></div>
           </div>
           <div class="layer-card reveal stagger-5">
             <div class="layer-dot dot-anode"></div>
-            <div>
-              <div class="layer-name">Анод — Hard Carbon</div>
-              <div class="layer-desc">Из биомассы, дешёвый</div>
-            </div>
+            <div><div class="layer-name">Анод — Hard Carbon</div><div class="layer-desc">Из биомассы, дешёвый</div></div>
           </div>
           <div class="layer-card reveal stagger-5">
             <div class="layer-dot dot-bottom"></div>
-            <div>
-              <div class="layer-name">Токосъёмники</div>
-              <div class="layer-desc">AL/AL (не медь) — дешевле и легче</div>
-            </div>
+            <div><div class="layer-name">Токосъёмники</div><div class="layer-desc">AL/AL вместо меди — дешевле и легче</div></div>
           </div>
         </div>
       </div>
@@ -286,23 +435,23 @@
               <td><span class="bar-val bad">0 → +45°C ⚠</span></td>
             </tr>
             <tr>
-              <td>Быстрый заряд</td>
+              <td>Заряд 0→80%</td>
               <td><span class="bar-val">2-4 ч</span></td>
-              <td><span class="bar-val best">15 мин (4C)</span></td>
-              <td><span class="bar-val best">6 мин (10C)</span></td>
+              <td><span class="bar-val best">15 мин</span></td>
+              <td><span class="bar-val best">6 мин</span></td>
               <td><span class="bar-val">TBD</span></td>
               <td><span class="bar-val">1-2 ч</span></td>
             </tr>
             <tr>
-              <td>Цена 24V 20Ah</td>
-              <td><span class="bar-val best">$100-170</span></td>
-              <td><span class="bar-val">~$175-290 DIY</span></td>
-              <td><span class="bar-val">$400-600</span></td>
+              <td>Цена 24V 30Ah</td>
+              <td><span class="bar-val best">$150-350</span></td>
+              <td><span class="bar-val">~$290 DIY</span></td>
+              <td><span class="bar-val">$300-800</span></td>
               <td><span class="bar-val bad">❌</span></td>
-              <td><span class="bar-val">$80-150</span></td>
+              <td><span class="bar-val">$120-200</span></td>
             </tr>
             <tr>
-              <td>Купить сейчас?</td>
+              <td>Купить?</td>
               <td><span class="bar-val best">✓ Да</span></td>
               <td><span class="bar-val">Ячейки</span></td>
               <td><span class="bar-val">Нишевые</span></td>
@@ -320,8 +469,9 @@
   <section class="section pricing-section" id="pricing">
     <div class="section-inner">
       <div class="section-head reveal">
-        <span class="t-label">Цены</span>
+        <span class="t-label">Цены · Июнь 2026</span>
         <h2 class="t-heading">Реальные предложения</h2>
+        <p class="t-sub" style="margin-top: var(--s-sm); max-width: 50ch;">Цены проверены на AliExpress, Amazon, Alibaba и сайтах производителей</p>
       </div>
 
       <div class="price-row">
@@ -331,21 +481,22 @@
           <div class="pc-price">$150 — $350</div>
           <div class="pc-tenge">70,500 — 164,500 ₸</div>
           <div class="pc-details">
-            <div class="pc-row"><span>AliExpress</span><span class="pc-row-val">от $100</span></div>
+            <div class="pc-row"><span>AliExpress (базовый)</span><span class="pc-row-val">от $100</span></div>
             <div class="pc-row"><span>Smart BMS + IP67</span><span class="pc-row-val">$200-350</span></div>
             <div class="pc-row"><span>Manly Battery</span><span class="pc-row-val">AGV-ready</span></div>
-            <div class="pc-row"><span>⚠ Зима</span><span class="pc-row-val">+$30-50 нагрев</span></div>
+            <div class="pc-row"><span>Amazon (LiTime)</span><span class="pc-row-val">$200-300</span></div>
+            <div class="pc-row"><span>⚠ Зима Алматы</span><span class="pc-row-val">+$30-50 нагрев</span></div>
           </div>
         </div>
 
         <div class="price-card reveal stagger-2">
           <div class="pc-name">Na-ion DIY 24V 20Ah</div>
-          <div class="pc-type">32140 ячейки · 8S2P</div>
+          <div class="pc-type">32140 ячейки · 8S2P · CATL</div>
           <div class="pc-price">$175 — $290</div>
           <div class="pc-tenge">82,250 — 136,300 ₸</div>
           <div class="pc-details">
-            <div class="pc-row"><span>Ячейки 32140</span><span class="pc-row-val">~$7.80/шт</span></div>
-            <div class="pc-row"><span>16 шт (8S2P)</span><span class="pc-row-val">~$125</span></div>
+            <div class="pc-row"><span>Ячейки 32140 ×16</span><span class="pc-row-val">~$125</span></div>
+            <div class="pc-row"><span>Na-ion BMS</span><span class="pc-row-val">$50-100</span></div>
             <div class="pc-row"><span>CATL опт</span><span class="pc-row-val">$46-62/kWh</span></div>
             <div class="pc-row"><span>Козырь</span><span class="pc-row-val">−40°C!</span></div>
           </div>
@@ -372,14 +523,14 @@
   <section class="section rec-section" id="recommendation">
     <div class="section-inner">
       <div class="rec-badge reveal stagger-1">✓ Вердикт</div>
-      <h2 class="t-heading reveal stagger-2"><span class="t-accent">LiFePO4</span> — наш выбор</h2>
+      <h2 class="t-heading reveal stagger-2"><span class="t-accent">LiFePO4</span> — покупаем сейчас</h2>
       <p class="rec-desc reveal stagger-3">
-        24V 30Ah с self-heating BMS. Баланс цены, безопасности и ресурса. Na-ion тестируем параллельно для зимы.
+        24V 30Ah с self-heating BMS. Лучший баланс цены, безопасности и ресурса.<br>Na-ion тестируем параллельно для отказа от нагревателя зимой.
       </p>
 
       <div class="rec-grid reveal stagger-4">
         <div class="rec-stat">
-          <div class="rec-stat-val">6,000</div>
+          <div class="rec-stat-val" data-counter data-target="6000">0</div>
           <div class="rec-stat-lbl">Циклов</div>
         </div>
         <div class="rec-stat">
@@ -387,12 +538,16 @@
           <div class="rec-stat-lbl">Безопасность</div>
         </div>
         <div class="rec-stat">
-          <div class="rec-stat-val">$200</div>
+          <div class="rec-stat-val">~$200</div>
           <div class="rec-stat-lbl">Средняя цена</div>
         </div>
         <div class="rec-stat">
           <div class="rec-stat-val">10+</div>
           <div class="rec-stat-lbl">Лет ресурса</div>
+        </div>
+        <div class="rec-stat">
+          <div class="rec-stat-val">270°C</div>
+          <div class="rec-stat-lbl">Порог T-Runaway</div>
         </div>
       </div>
 
@@ -402,16 +557,16 @@
           <div class="road-text"><strong>LiFePO4 30Ah</strong> + self-heating BMS → покупаем сейчас</div>
         </div>
         <div class="road-step">
-          <div class="road-year">2026-27</div>
-          <div class="road-text"><strong>Na-ion тест</strong> — 32140 ячейки ($125), зимние тесты</div>
+          <div class="road-year" style="color: var(--blue);">2026-27</div>
+          <div class="road-text"><strong>Na-ion тест</strong> — заказываем 32140 ячейки (~$125), собираем прототип, тестируем зимой</div>
         </div>
         <div class="road-step">
-          <div class="road-year">2027-28</div>
-          <div class="road-text"><strong>Na-ion переход</strong> — готовые паки, без нагрева зимой</div>
+          <div class="road-year" style="color: var(--green);">2027-28</div>
+          <div class="road-text"><strong>Na-ion переход</strong> — готовые 24V паки, без нагрева зимой, цена ниже LFP</div>
         </div>
         <div class="road-step">
-          <div class="road-year">2028+</div>
-          <div class="road-text"><strong>LTO / Solid-State</strong> — для 24/7 промышленных</div>
+          <div class="road-year" style="color: var(--gold);">2028+</div>
+          <div class="road-text"><strong>LTO / Solid-State</strong> — мониторинг для 24/7 промышленных роботов</div>
         </div>
       </div>
     </div>
