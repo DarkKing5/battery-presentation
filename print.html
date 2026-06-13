@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POWER CELLS — Tiger Robotics (Print)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════════════
+       PRINT VERSION — A4 Color
+       ═══════════════════════════════════════════════ */
+
+    :root {
+      --ink:       #1A1816;
+      --ink-2:     #5A5550;
+      --ink-3:     #8A8580;
+      --ink-4:     #B5B0AA;
+      --accent:    #9B8A6E;
+      --green:     #4A8A5F;
+      --blue:      #4A6E8A;
+      --red:       #8A4A4A;
+      --gold:      #8A7A4A;
+      --bg-warm:   #F5F2ED;
+      --border:    #E8E4DE;
+    }
+
+    @page {
+      size: A4;
+      margin: 18mm 16mm;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9.5pt;
+      line-height: 1.55;
+      color: var(--ink);
+      background: white;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    h1, h2, h3, h4 {
+      font-family: 'Chakra Petch', sans-serif;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      text-wrap: balance;
+    }
+
+    /* ── Page Break Control ───────────────────────── */
+    .page-break { page-break-before: always; }
+    .no-break { page-break-inside: avoid; }
+
+    /* ── COVER PAGE ───────────────────────────────── */
+    .cover {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      page-break-after: always;
+    }
+
+    .cover-label {
+      font-size: 7pt;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: 16pt;
+    }
+
+    .cover h1 {
+      font-size: 42pt;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+    }
+
+    .cover h1 span { color: var(--accent); }
+
+    .cover-sub {
+      font-size: 11pt;
+      color: var(--ink-2);
+      margin-top: 8pt;
+      max-width: 35ch;
+    }
+
+    .cover-image {
+      max-width: 320px;
+      margin: 32pt auto;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .cover-specs {
+      display: flex;
+      justify-content: center;
+      gap: 32pt;
+      margin-top: 20pt;
+    }
+
+    .cover-spec-val {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 16pt;
+      font-weight: 700;
+    }
+
+    .cover-spec-lbl {
+      font-size: 6.5pt;
+      color: var(--ink-3);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .cover-footer {
+      margin-top: 40pt;
+      font-size: 7pt;
+      color: var(--ink-4);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── SECTION HEADERS ──────────────────────────── */
+    .section-label {
+      font-size: 6.5pt;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: 4pt;
+    }
+
+    .section-title {
+      font-size: 20pt;
+      margin-bottom: 8pt;
+    }
+
+    .section-desc {
+      font-size: 9pt;
+      color: var(--ink-2);
+      max-width: 55ch;
+      line-height: 1.6;
+      margin-bottom: 16pt;
+    }
+
+    /* ── CHALLENGE SPREAD ─────────────────────────── */
+    .challenge {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24pt;
+      align-items: center;
+      margin-bottom: 20pt;
+    }
+
+    .challenge-img {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .challenge-stats {
+      display: flex;
+      gap: 24pt;
+      margin-top: 12pt;
+    }
+
+    .stat-val {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 22pt;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .stat-lbl {
+      font-size: 6.5pt;
+      color: var(--ink-3);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── TYPES GRID ───────────────────────────────── */
+    .types-img {
+      max-width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 14pt;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .types-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .type-cell {
+      background: white;
+      padding: 10pt;
+      text-align: center;
+    }
+
+    .type-name {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 10pt;
+      font-weight: 600;
+    }
+
+    .type-chem { font-size: 6pt; color: var(--ink-3); margin-bottom: 6pt; }
+
+    .type-num {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 14pt;
+      font-weight: 700;
+    }
+
+    .type-unit { font-size: 6pt; color: var(--ink-3); }
+
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 100px;
+      font-size: 6pt;
+      margin-top: 6pt;
+      letter-spacing: 0.03em;
+    }
+
+    .tag-g { background: rgba(74, 138, 95, 0.1); color: var(--green); }
+    .tag-b { background: rgba(74, 110, 138, 0.1); color: var(--blue); }
+    .tag-a { background: rgba(155, 138, 110, 0.1); color: var(--accent); }
+    .tag-y { background: rgba(138, 122, 74, 0.1); color: var(--gold); }
+    .tag-r { background: rgba(138, 74, 74, 0.1); color: var(--red); }
+
+    /* ── DEEP DIVE SPLIT ──────────────────────────── */
+    .deep {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24pt;
+      align-items: center;
+      margin-bottom: 12pt;
+    }
+
+    .deep.reverse { direction: rtl; }
+    .deep.reverse > * { direction: ltr; }
+
+    .deep-img {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 16px rgba(0,0,0,0.06);
+    }
+
+    .deep-title {
+      font-size: 18pt;
+      margin: 2pt 0 6pt;
+    }
+
+    .deep-body {
+      font-size: 8.5pt;
+      color: var(--ink-2);
+      line-height: 1.6;
+    }
+
+    .feat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4pt 16pt;
+      margin-top: 10pt;
+    }
+
+    .feat-item {
+      padding: 4pt 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .feat-val {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 11pt;
+      font-weight: 700;
+    }
+
+    .feat-lbl {
+      font-size: 6pt;
+      color: var(--ink-3);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .callout {
+      margin-top: 10pt;
+      padding: 6pt 10pt;
+      background: rgba(138, 122, 74, 0.06);
+      border-left: 2.5px solid var(--gold);
+      border-radius: 0 4px 4px 0;
+      font-size: 7.5pt;
+      color: var(--ink-2);
+    }
+
+    .callout-b {
+      background: rgba(74, 110, 138, 0.06);
+      border-left-color: var(--blue);
+    }
+
+    /* ── DUO CARDS ─────────────────────────────────── */
+    .duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16pt;
+      margin-top: 16pt;
+    }
+
+    .duo-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .duo-card-danger { border-color: rgba(138, 74, 74, 0.25); }
+
+    .duo-img { height: 140px; overflow: hidden; }
+    .duo-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    .duo-body { padding: 10pt; }
+    .duo-title { font-family: 'Chakra Petch', sans-serif; font-size: 11pt; font-weight: 600; margin: 2pt 0 4pt; }
+    .duo-desc { font-size: 7.5pt; color: var(--ink-2); line-height: 1.5; }
+    .duo-meta { margin-top: 6pt; font-size: 6pt; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 500; }
+
+    /* ── ANATOMY ───────────────────────────────────── */
+    .anatomy-img {
+      max-width: 400px;
+      margin: 12pt auto;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 16px rgba(0,0,0,0.06);
+    }
+
+    .layers-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8pt;
+      margin-top: 12pt;
+    }
+
+    .layer {
+      display: flex;
+      gap: 8pt;
+      align-items: flex-start;
+      padding: 8pt;
+      background: var(--bg-warm);
+      border-radius: 6px;
+    }
+
+    .layer-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .d-gray { background: #8A8580; }
+    .d-green { background: var(--green); }
+    .d-brown { background: #B86E3A; }
+    .d-blue { background: var(--blue); }
+    .d-dark { background: #4A4A4A; }
+
+    .layer-name { font-family: 'Chakra Petch', sans-serif; font-size: 8.5pt; font-weight: 600; }
+    .layer-desc { font-size: 7pt; color: var(--ink-2); }
+
+    /* ── COMPARISON TABLE ──────────────────────────── */
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8pt;
+      margin-top: 12pt;
+    }
+
+    .comp-table th {
+      font-family: 'Chakra Petch', sans-serif;
+      font-weight: 600;
+      font-size: 8.5pt;
+      text-align: left;
+      padding: 6pt 8pt;
+      background: var(--bg-warm);
+      border-bottom: 2px solid var(--border);
+    }
+
+    .comp-table td {
+      padding: 5pt 8pt;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+
+    .comp-table td:first-child {
+      font-weight: 500;
+      color: var(--ink-2);
+      font-size: 7pt;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .best { color: var(--accent); font-weight: 600; }
+    .bad { color: var(--red); }
+
+    /* ── PRICE CARDS ───────────────────────────────── */
+    .price-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12pt;
+      margin-top: 14pt;
+    }
+
+    .pc {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12pt;
+    }
+
+    .pc-feat { border-color: var(--accent); }
+
+    .pc-name { font-family: 'Chakra Petch', sans-serif; font-size: 10pt; font-weight: 600; }
+    .pc-type { font-size: 6pt; color: var(--ink-3); margin-bottom: 8pt; }
+    .pc-price { font-family: 'Chakra Petch', sans-serif; font-size: 16pt; font-weight: 700; }
+    .pc-tenge { font-size: 7pt; color: var(--ink-3); }
+
+    .pc-details { margin-top: 8pt; }
+
+    .pc-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 7pt;
+      color: var(--ink-2);
+      padding: 3pt 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pc-row:last-child { border-bottom: none; }
+    .pc-row-v { color: var(--ink); font-weight: 500; }
+
+    /* ── RECOMMENDATION ───────────────────────────── */
+    .rec-center { text-align: center; }
+
+    .rec-badge {
+      display: inline-block;
+      padding: 3pt 14pt;
+      border-radius: 100px;
+      background: rgba(74, 138, 95, 0.08);
+      color: var(--green);
+      font-size: 7pt;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6pt;
+    }
+
+    .rec-desc {
+      max-width: 50ch;
+      margin: 6pt auto 14pt;
+      font-size: 9pt;
+      color: var(--ink-2);
+      line-height: 1.6;
+    }
+
+    .rec-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8pt;
+      max-width: 100%;
+      margin: 0 auto 16pt;
+    }
+
+    .rec-stat {
+      padding: 10pt;
+      background: var(--bg-warm);
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .rec-stat-val { font-family: 'Chakra Petch', sans-serif; font-size: 13pt; font-weight: 700; }
+    .rec-stat-lbl { font-size: 5.5pt; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 2pt; }
+
+    /* Roadmap */
+    .roadmap {
+      display: flex;
+      flex-direction: column;
+      gap: 6pt;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .road {
+      display: flex;
+      gap: 10pt;
+      align-items: flex-start;
+      padding: 6pt 10pt;
+      background: var(--bg-warm);
+      border-radius: 6px;
+    }
+
+    .road-y {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 8pt;
+      font-weight: 700;
+      color: var(--accent);
+      min-width: 50pt;
+      flex-shrink: 0;
+    }
+
+    .road-t { font-size: 7.5pt; color: var(--ink-2); line-height: 1.4; }
+    .road-t strong { color: var(--ink); }
+
+    /* ── FOOTER ────────────────────────────────────── */
+    .footer {
+      margin-top: 24pt;
+      padding-top: 12pt;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 7pt;
+      color: var(--ink-4);
+    }
+
+    /* ── DIVIDER ───────────────────────────────────── */
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--ink-4);
+      margin: 16pt auto;
+      opacity: 0.4;
+    }
+
+    /* ── PRINT BUTTON (hidden in print) ───────────── */
+    .print-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 12px 28px;
+      background: var(--ink);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      z-index: 100;
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+
+    .print-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.2); }
+    .print-btn:active { transform: scale(0.97); }
+
+    @media print {
+      .print-btn { display: none; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="print-btn" onclick="window.print()">📄 Печать / PDF</button>
+
+  <!-- ═══ ОБЛОЖКА ═══ -->
+  <div class="cover">
+    <div class="cover-label">Tiger Robotics Research · Июнь 2026</div>
+    <h1>POWER <span>CELLS</span></h1>
+    <p class="cover-sub">Какую батарею поставить в автономного робота, чтобы он пережил зиму и лето Алматы?</p>
+    <div class="cover-image">
+      <img src="img/battery-hero.png" alt="LiFePO4 battery pack">
+    </div>
+    <div class="cover-specs">
+      <div><div class="cover-spec-val">24V</div><div class="cover-spec-lbl">Напряжение</div></div>
+      <div><div class="cover-spec-val">30 Ah</div><div class="cover-spec-lbl">Ёмкость</div></div>
+      <div><div class="cover-spec-val">80 кг</div><div class="cover-spec-lbl">Масса робота</div></div>
+      <div><div class="cover-spec-val">−25 / +42°C</div><div class="cover-spec-lbl">Алматы</div></div>
+    </div>
+    <div class="cover-footer">Tiger Robotics × Farabi Innovation Hub · Алматы, Казахстан</div>
+  </div>
+
+
+  <!-- ═══ СТРАНИЦА 2: ВЫЗОВ + ОБЗОР ═══ -->
+  <div class="page-break"></div>
+
+  <div class="section-label">Вызов</div>
+  <h2 class="section-title">Зима −25°C. Лето +42°C.</h2>
+
+  <div class="challenge no-break">
+    <div>
+      <p class="deep-body">Робот Tiger работает на улице круглый год. Большинство батарей не выдерживают такой разброс температур. Литий-ион замерзает зимой и перегревается летом. Нам нужна батарея, которая работает везде.</p>
+      <div class="challenge-stats">
+        <div><div class="stat-val">67°C</div><div class="stat-lbl">Разница зима/лето</div></div>
+        <div><div class="stat-val">365</div><div class="stat-lbl">Дней/год на улице</div></div>
+      </div>
+    </div>
+    <div class="challenge-img">
+      <img src="img/almaty-winter.png" alt="Алматы зимой">
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-label">Обзор</div>
+  <h2 class="section-title">5 технологий батарей</h2>
+  <p class="section-desc">Каждая батарея — это компромисс. Нет идеальной. Но есть лучшая для нашего робота.</p>
+
+  <div class="types-img">
+    <img src="img/battery-types.png" alt="5 типов батарей">
+  </div>
+
+  <div class="types-grid no-break">
+    <div class="type-cell">
+      <div class="type-name">LiFePO4</div>
+      <div class="type-chem">Литий-железо-фосфат</div>
+      <div class="type-num">6,000+</div>
+      <div class="type-unit">циклов</div>
+      <span class="tag tag-g">✓ Наш выбор</span>
+    </div>
+    <div class="type-cell">
+      <div class="type-name">Na-ion</div>
+      <div class="type-chem">Натрий-ионные</div>
+      <div class="type-num">−40°C</div>
+      <div class="type-unit">мороз</div>
+      <span class="tag tag-b">Перспективный</span>
+    </div>
+    <div class="type-cell">
+      <div class="type-name">LTO</div>
+      <div class="type-chem">Литий-титанат</div>
+      <div class="type-num">25,000+</div>
+      <div class="type-unit">циклов</div>
+      <span class="tag tag-a">Премиум</span>
+    </div>
+    <div class="type-cell">
+      <div class="type-name">Solid-State</div>
+      <div class="type-chem">Твердотельные</div>
+      <div class="type-num">2028+</div>
+      <div class="type-unit">будущее</div>
+      <span class="tag tag-y">R&D</span>
+    </div>
+    <div class="type-cell">
+      <div class="type-name">Li-ion</div>
+      <div class="type-chem">18650 / 21700</div>
+      <div class="type-num">⚠</div>
+      <div class="type-unit">опасно</div>
+      <span class="tag tag-r">Нет</span>
+    </div>
+  </div>
+
+
+  <!-- ═══ СТРАНИЦА 3: LiFePO4 + Na-ion ═══ -->
+  <div class="page-break"></div>
+
+  <div class="section-label">🥇 Рекомендация</div>
+  <h2 class="section-title">LiFePO4</h2>
+
+  <div class="deep reverse no-break">
+    <div>
+      <p class="deep-body">Золотой стандарт для робототехники. Оливиновая структура катода не выделяет кислород при перегреве — thermal runaway практически невозможен. Порог возгорания 270°C (у Li-ion — 150°C).</p>
+      <div class="feat-grid">
+        <div class="feat-item"><div class="feat-val">6,000</div><div class="feat-lbl">Циклов при 80% DOD</div></div>
+        <div class="feat-item"><div class="feat-val">9/10</div><div class="feat-lbl">Безопасность</div></div>
+        <div class="feat-item"><div class="feat-val">$150-250</div><div class="feat-lbl">24V 30Ah пак</div></div>
+        <div class="feat-item"><div class="feat-val">10+ лет</div><div class="feat-lbl">Ресурс</div></div>
+      </div>
+      <div class="callout">⚠ Нельзя заряжать ниже 0°C — нужен self-heating BMS (+$30-50)</div>
+    </div>
+    <div class="deep-img">
+      <img src="img/lifepo4.png" alt="LiFePO4 battery">
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-label">🥈 Будущее</div>
+  <h2 class="section-title">Na-ion</h2>
+
+  <div class="deep no-break">
+    <div>
+      <p class="deep-body">Козырь — мороз. CATL Naxtra сохраняет 90% ёмкости при −40°C. Заряжается при −20°C. Для Алматы это значит: никакого нагревателя зимой. Но готовых 24V паков нет — только DIY из 32140 ячеек.</p>
+      <div class="feat-grid">
+        <div class="feat-item"><div class="feat-val">−40°C</div><div class="feat-lbl">Рабочая температура</div></div>
+        <div class="feat-item"><div class="feat-val">15 мин</div><div class="feat-lbl">Заряд до 80%</div></div>
+        <div class="feat-item"><div class="feat-val">$175-290</div><div class="feat-lbl">DIY пак (8S2P)</div></div>
+        <div class="feat-item"><div class="feat-val">0% лития</div><div class="feat-lbl">Экологичность</div></div>
+      </div>
+      <div class="callout callout-b">Заказать 16 ячеек 32140 (~$125) для зимнего тестирования</div>
+    </div>
+    <div class="deep-img">
+      <img src="img/naion.png" alt="Na-ion cells">
+    </div>
+  </div>
+
+
+  <!-- ═══ СТРАНИЦА 4: LTO + Остальные ═══ -->
+  <div class="page-break"></div>
+
+  <div class="section-label">🥉 Неубиваемый</div>
+  <h2 class="section-title">LTO</h2>
+
+  <div class="deep reverse no-break">
+    <div>
+      <p class="deep-body">Литий-титанатный анод с наноструктурой. 25,000 циклов — батарея переживёт робота 5 раз. Заряд 80% за 6 минут. Безопасность 10/10. Но тяжелее и дороже в 2-3 раза.</p>
+      <div class="feat-grid">
+        <div class="feat-item"><div class="feat-val">25,000</div><div class="feat-lbl">Циклов жизни</div></div>
+        <div class="feat-item"><div class="feat-val">6 мин</div><div class="feat-lbl">Заряд до 80%</div></div>
+        <div class="feat-item"><div class="feat-val">$300-800</div><div class="feat-lbl">24V 30Ah пак</div></div>
+        <div class="feat-item"><div class="feat-val">10/10</div><div class="feat-lbl">Безопасность</div></div>
+      </div>
+    </div>
+    <div class="deep-img">
+      <img src="img/lto.png" alt="LTO cell">
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="duo no-break">
+    <div class="duo-card">
+      <div class="duo-img"><img src="img/solidstate.png" alt="Solid-state"></div>
+      <div class="duo-body">
+        <div class="section-label">👀 Будущее</div>
+        <div class="duo-title">Solid-State</div>
+        <p class="duo-desc">350-420 Wh/kg — в 2 раза легче LiFePO4. Но не продаётся. Toyota и Samsung: массовое производство к 2027-28. Для робототехники — 2028-30.</p>
+        <div class="duo-meta">Статус: нельзя купить</div>
+      </div>
+    </div>
+    <div class="duo-card duo-card-danger">
+      <div class="duo-img"><img src="img/sausages.png" alt="Li-ion danger"></div>
+      <div class="duo-body">
+        <div class="section-label" style="color: var(--red);">❌ «Сосиски не пойдут»</div>
+        <div class="duo-title">Li-ion 18650/21700</div>
+        <p class="duo-desc">Thermal runaway при 150°C. Выделяют O₂ — огонь сам себя питает. 42+ ячейки = 42 точки отказа. Вибрация + жара Алматы = опасно.</p>
+        <div class="duo-meta" style="color: var(--red);">CEO прав: не для нашего робота</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══ СТРАНИЦА 5: АНАТОМИЯ ═══ -->
+  <div class="page-break"></div>
+
+  <div class="section-label">Внутри батареи</div>
+  <h2 class="section-title">Анатомия LiFePO4</h2>
+  <p class="section-desc">Каждый слой отвечает за безопасность, ёмкость или ресурс</p>
+
+  <div class="anatomy-img no-break">
+    <img src="img/exploded-lifepo4.png" alt="LiFePO4 exploded view">
+  </div>
+
+  <div class="layers-grid no-break">
+    <div class="layer"><div class="layer-dot d-gray"></div><div><div class="layer-name">Корпус</div><div class="layer-desc">AL/сталь, IP65+, крепёж M6</div></div></div>
+    <div class="layer"><div class="layer-dot d-green"></div><div><div class="layer-name">BMS плата</div><div class="layer-desc">8 защит, CANBus/RS485, балансировка</div></div></div>
+    <div class="layer"><div class="layer-dot d-brown"></div><div><div class="layer-name">Катод — LiFePO₄</div><div class="layer-desc">3.2V/ячейка, 0% кобальта</div></div></div>
+    <div class="layer"><div class="layer-dot d-blue"></div><div><div class="layer-name">Электролит</div><div class="layer-desc">LiPF₆, безопасен при перегреве</div></div></div>
+    <div class="layer"><div class="layer-dot d-dark"></div><div><div class="layer-name">Анод — графит</div><div class="layer-desc">372 mAh/g, стабильный</div></div></div>
+    <div class="layer"><div class="layer-dot d-gray"></div><div><div class="layer-name">Основание</div><div class="layer-desc">Крепёж на шасси, охлаждение</div></div></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-label">Na-ion — отличия</div>
+  <div class="anatomy-img no-break" style="max-width: 350px;">
+    <img src="img/exploded-naion.png" alt="Na-ion exploded view">
+  </div>
+  <div class="layers-grid no-break">
+    <div class="layer"><div class="layer-dot d-brown"></div><div><div class="layer-name">Катод — Прусский синий</div><div class="layer-desc">0% лития, −30-40% себестоимость</div></div></div>
+    <div class="layer"><div class="layer-dot d-blue"></div><div><div class="layer-name">Электролит — козырь!</div><div class="layer-desc">NaPF₆, работает при −40°C</div></div></div>
+    <div class="layer"><div class="layer-dot d-dark"></div><div><div class="layer-name">Анод — Hard Carbon</div><div class="layer-desc">Из биомассы, дешёвый</div></div></div>
+    <div class="layer"><div class="layer-dot d-gray"></div><div><div class="layer-name">Токосъёмники</div><div class="layer-desc">AL/AL вместо меди</div></div></div>
+  </div>
+
+
+  <!-- ═══ СТРАНИЦА 6: СРАВНЕНИЕ ═══ -->
+  <div class="page-break"></div>
+
+  <div class="section-label">Сравнение</div>
+  <h2 class="section-title">Лицом к лицу</h2>
+
+  <table class="comp-table no-break">
+    <thead>
+      <tr><th></th><th>LiFePO4</th><th>Na-ion</th><th>LTO</th><th>Solid-State</th><th>Li-ion</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Wh/kg</td><td>90-210</td><td>100-175</td><td>60-110</td><td class="best">350-420*</td><td>200-300</td></tr>
+      <tr><td>Циклы</td><td class="best">4-6K</td><td>2-10K</td><td class="best">20-25K</td><td>1-2K*</td><td class="bad">300-1.2K</td></tr>
+      <tr><td>Безопасность</td><td class="best">9/10</td><td class="best">9/10</td><td class="best">10/10</td><td>8/10*</td><td class="bad">5/10</td></tr>
+      <tr><td>t° разряд</td><td>−20 → +60°C</td><td class="best">−40 → +70°C</td><td class="best">−40 → +60°C</td><td>TBD</td><td>−20 → +60°C</td></tr>
+      <tr><td>t° заряд</td><td class="bad">0 → +45°C ⚠</td><td class="best">−20 → +45°C</td><td class="best">−30 → +55°C</td><td>TBD</td><td class="bad">0 → +45°C ⚠</td></tr>
+      <tr><td>Заряд 0→80%</td><td>2-4 ч</td><td class="best">15 мин</td><td class="best">6 мин</td><td>TBD</td><td>1-2 ч</td></tr>
+      <tr><td>Цена 24V 30Ah</td><td class="best">$150-350</td><td>~$290 DIY</td><td>$300-800</td><td class="bad">❌</td><td>$120-200</td></tr>
+      <tr><td>Купить?</td><td class="best">✓ Да</td><td>Ячейки</td><td>Нишевые</td><td class="bad">Нет</td><td>Да, но ⚠</td></tr>
+    </tbody>
+  </table>
+
+  <div class="divider"></div>
+
+  <!-- ═══ ЦЕНЫ ═══ -->
+  <div class="section-label">Цены · Июнь 2026</div>
+  <h2 class="section-title">Реальные предложения</h2>
+  <p class="section-desc">Цены проверены на AliExpress, Amazon, Alibaba</p>
+
+  <div class="price-row no-break">
+    <div class="pc pc-feat">
+      <div class="pc-name">LiFePO4 24V 30Ah</div>
+      <div class="pc-type">Smart BMS · Grade A · IP67</div>
+      <div class="pc-price">$150 — $350</div>
+      <div class="pc-tenge">70,500 — 164,500 ₸</div>
+      <div class="pc-details">
+        <div class="pc-row"><span>AliExpress</span><span class="pc-row-v">от $100</span></div>
+        <div class="pc-row"><span>Smart BMS + IP67</span><span class="pc-row-v">$200-350</span></div>
+        <div class="pc-row"><span>Manly Battery</span><span class="pc-row-v">AGV-ready</span></div>
+        <div class="pc-row"><span>⚠ Зима</span><span class="pc-row-v">+$30-50 нагрев</span></div>
+      </div>
+    </div>
+    <div class="pc">
+      <div class="pc-name">Na-ion DIY 24V 20Ah</div>
+      <div class="pc-type">32140 ячейки · 8S2P</div>
+      <div class="pc-price">$175 — $290</div>
+      <div class="pc-tenge">82,250 — 136,300 ₸</div>
+      <div class="pc-details">
+        <div class="pc-row"><span>Ячейки ×16</span><span class="pc-row-v">~$125</span></div>
+        <div class="pc-row"><span>BMS</span><span class="pc-row-v">$50-100</span></div>
+        <div class="pc-row"><span>CATL опт</span><span class="pc-row-v">$46-62/kWh</span></div>
+        <div class="pc-row"><span>Козырь</span><span class="pc-row-v">−40°C!</span></div>
+      </div>
+    </div>
+    <div class="pc">
+      <div class="pc-name">LTO 24V 30Ah</div>
+      <div class="pc-type">Yinlong · Toshiba SCiB</div>
+      <div class="pc-price">$300 — $800</div>
+      <div class="pc-tenge">141,000 — 376,000 ₸</div>
+      <div class="pc-details">
+        <div class="pc-row"><span>Yinlong</span><span class="pc-row-v">$15-40/яч.</span></div>
+        <div class="pc-row"><span>Toshiba SCiB</span><span class="pc-row-v">$500-1,500</span></div>
+        <div class="pc-row"><span>Заряд</span><span class="pc-row-v">6 мин!</span></div>
+        <div class="pc-row"><span>Ресурс</span><span class="pc-row-v">25,000 цикл.</span></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══ СТРАНИЦА 7: РЕКОМЕНДАЦИЯ ═══ -->
+  <div class="page-break"></div>
+
+  <div class="rec-center">
+    <div class="rec-badge">✓ Вердикт</div>
+    <h2 class="section-title"><span style="color: var(--accent);">LiFePO4</span> — покупаем сейчас</h2>
+    <p class="rec-desc">24V 30Ah с self-heating BMS. Лучший баланс цены, безопасности и ресурса. Na-ion тестируем параллельно для отказа от нагревателя зимой.</p>
+  </div>
+
+  <div class="rec-grid no-break">
+    <div class="rec-stat"><div class="rec-stat-val">6,000</div><div class="rec-stat-lbl">Циклов</div></div>
+    <div class="rec-stat"><div class="rec-stat-val">9/10</div><div class="rec-stat-lbl">Безопасность</div></div>
+    <div class="rec-stat"><div class="rec-stat-val">~$200</div><div class="rec-stat-lbl">Средняя цена</div></div>
+    <div class="rec-stat"><div class="rec-stat-val">10+</div><div class="rec-stat-lbl">Лет ресурса</div></div>
+    <div class="rec-stat"><div class="rec-stat-val">270°C</div><div class="rec-stat-lbl">T-Runaway</div></div>
+  </div>
+
+  <div class="roadmap no-break">
+    <div class="road"><div class="road-y">2026</div><div class="road-t"><strong>LiFePO4 30Ah</strong> + self-heating BMS → покупаем сейчас</div></div>
+    <div class="road"><div class="road-y" style="color:var(--blue);">2026-27</div><div class="road-t"><strong>Na-ion тест</strong> — 32140 ячейки (~$125), зимние тесты в Алматы</div></div>
+    <div class="road"><div class="road-y" style="color:var(--green);">2027-28</div><div class="road-t"><strong>Na-ion переход</strong> — готовые паки, без нагрева зимой</div></div>
+    <div class="road"><div class="road-y" style="color:var(--gold);">2028+</div><div class="road-t"><strong>LTO / Solid-State</strong> — для 24/7 промышленных роботов</div></div>
+  </div>
+
+  <div class="footer">
+    <p>Tiger Robotics × Farabi Innovation Hub · Алматы, Казахстан · Июнь 2026</p>
+  </div>
+
+</body>
+</html>
